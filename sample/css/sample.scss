@@ -1,0 +1,24 @@
+body {
+  .content {
+    width: 100%;
+
+    .contentHeader {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      height: 80px;
+      overflow: hidden;
+      font-size: 16px;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+  .flip {
+    display: none;
+    cursor: pointer;
+    transition: all 500ms ease;
+  }
+}

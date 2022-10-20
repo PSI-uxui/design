@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Samples</title>
+
+    <!-- js -->
+    <script src="/common/plugins/jquery/jquery-3.6.0.js"></script>
+    <script src="/common/plugins/jquery-ui-1.13.2/jquery-ui.js"></script>
+
+    <!-- fontawesome -->
+    <script src="/common/plugins/fontawesome-free-6.1.2-web/js/all.js"></script>
+
+    <!-- jQuery Date Range Picker -->
+    <link rel="stylesheet" href="/common/plugins/daterangepicker/daterangepicker.css">
+    <script type="text/javascript" src="/common/plugins/daterangepicker/moment.js"></script>
+    <script type="text/javascript" src="/common/plugins/daterangepicker/jquery.daterangepicker.min.js"></script>
+
+    <!-- select2 -->
+    <link rel="stylesheet" href="/common/plugins/select2/select2.min.css">
+    <script src="/common/plugins/select2/select2.min.js"></script>
+
+    <!-- sweetalert -->
+    <script src="/common/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- common -->
+    <link rel="stylesheet" href="/common/css/app.css" type="text/css" />
+    <script src="/common/js/common.js"></script>
+</head>
+
+<body>
+    <nav></nav>
+
+    <div class="appWrap">
+        <header></header>
+
+        <div class="topInfo">
+            <div class="siteRoad"><span>경로</span></div>
+            <div class="mapToggle">
+                <div class="autoRefresh">
+                    <button>
+                        자동갱신
+                        <div class="refresh">
+                            <i class="fa-solid fa-rotate-right"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="bookMark">
+                    <button>
+                        즐겨찾기
+                        <div class="star"><i class="fa-solid fa-star"></i></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="secWrap">
+                <h2>Modal Sample</h2>
+                <div class="rsltBox">
+                    <h3>모달버튼모음</h3>
+                    <div class="btn">
+                        <div class="btnLeft">
+                            <div class="crudBtn"></div>
+                            <div class="workBtn">
+                                <button class="state2" onclick="modal('modal1')">Large</button>
+                                <button class="state2" onclick="modal('modal2')">Midium</button>
+                                <button class="state2" onclick="modal('modal3')">Small</button>
+                            </div>
+                        </div>
+                        <div class="btnRight">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rsltBox" style="margin-top: 8px;">
+                    <h3>경고창모음</h3>
+                    <div class="btn">
+                        <div class="btnLeft">
+                            <div class="crudBtn"></div>
+                            <div class="workBtn">
+                                <button class="state1" onclick="swal({
+                                    title: 'default1',
+                                    text: `it's default1`,
+                                    button: '확인'
+                                })">default1</button>
+                                <button class="state1" onclick="swal({
+                                    title: 'default2',
+                                    text: `it's default2`,
+                                    buttons:{
+                                        cancel:'취소',
+                                        confirm: '확인'
+                                    },
+                                    closeOnClickOutside: false,
+                                })">default2</button>
+                                <button class="state2" onclick="swal({
+                                    icon: 'warning',
+                                    title: 'warning',
+                                    text: `it's warning`,
+                                    buttons:{
+                                        cancel:'취소',
+                                        confirm: '확인'
+                                    },
+                                    closeOnClickOutside: false,
+                                })">icon:warning</button>
+                                <button class="state2" onclick="swal({
+                                    icon: 'error',
+                                    title: 'error',
+                                    text: `it's error`,
+                                    buttons:{
+                                        cancel:'취소',
+                                        confirm: '확인'
+                                    },
+                                    closeOnClickOutside: false,
+                                })">icon:error</button>
+                                <button class="state2" onclick="swal({
+                                    icon: 'success',
+                                    title: 'success',
+                                    text: `it's success`,
+                                    buttons:{
+                                        cancel:'취소',
+                                        confirm: '확인'
+                                    },
+                                    closeOnClickOutside: false,
+                                })">icon:success</button>
+                                <button class="state2" onclick="swal({
+                                    icon: 'info',
+                                    title: 'info',
+                                    text: `it's info`,
+                                    buttons:{
+                                        cancel:'취소',
+                                        confirm: '확인'
+                                    },
+                                    closeOnClickOutside: false,
+                                })">icon:info</button>
+                                <button onclick="window.open('https://sweetalert.js.org/docs/#configuration')" class="state3">other configration</button>
+                            </div>
+                        </div>
+                        <div class="btnRight">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="modalWrap">
+            <!-- "max", "mid", "min" class 부여 3단계 사이즈 -->
+            <div class="modal max modal1">
+                <div class="closeBtn" onclick="modal('modal1')"><i class="fa-solid fa-xmark"></i></div>
+
+                <h3>max size modal</h3>
+                <div class="modalInWrap">
+                </div>
+            </div>
+
+            <div class="modal mid modal2">
+                <div class="closeBtn" onclick="modal('modal2')"><i class="fa-solid fa-xmark"></i></div>
+
+                <h3>mid size modal</h3>
+                <div class="modalInWrap">
+
+                </div>
+            </div>
+
+            <div class="modal min modal3">
+                <div class="closeBtn" onclick="modal('modal3')"><i class="fa-solid fa-xmark"></i></div>
+
+                <h3>min size modal</h3>
+                <div class="modalInWrap">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

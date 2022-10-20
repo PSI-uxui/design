@@ -1,0 +1,65 @@
+input {
+  border: 1px solid var(--b5);
+  padding: 6px 0px 6px 8px;
+  border-radius: 2px;
+  background-color: white;
+  width: 100%;
+}
+input::-webkit-input-placeholder {
+  color: var(--b3);
+}
+input::-moz-placeholder {
+  color: var(--b3);
+}
+input:-ms-input-placeholder {
+  color: var(--b3);
+}
+input::-ms-input-placeholder {
+  color: var(--b3);
+}
+input::placeholder {
+  color: var(--b3);
+}
+input[type=date]:not(:valid)::-webkit-datetime-edit {
+  color: var(--b3);
+}
+input:disabled {
+  background-color: var(--b4);
+}
+input:focus {
+  outline: 1px solid var(--btn2);
+}
+
+.mag {
+  background-color: var(--btn2);
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  cursor: pointer;
+}
+.mag svg {
+  color: var(--b7);
+}
+
+.inputBox {
+  position: relative;
+}
+.inputBox span {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  display: none;
+  cursor: pointer;
+}

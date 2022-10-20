@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/common/css/app.css">
+    <!-- <link rel="stylesheet" href="/common/css/scss/_range.scss"> -->
+    <!-- <script src="/css/scss/common/JS/jquery-3.6.1.min.js"></script> -->
+    <script type="module" src="/sample/js/range.js"></script>
+    
+</head>
+
+<body style="display:inline-block;">
+    <fieldset class="dual-range-input"> 
+
+        <div class="dual-range-number-input">
+            <div class="labelMin">
+                <label><span class="label-text hidden">Budget Min</span>
+                  <span class="input-prepend">$</span><input id="budgetMin" name="budgetMin" class="minvalue" type="number" step="1000" min="1000" max="100000" value="1000" onfocus="bgcolor_change(this)" onblur="bgcolor_back(this)"/>
+                </label>
+            </div>
+            
+            <div class="dual-range-slider">
+              <label for="budgetMinRange">Budget Min</label>
+              <input id="budgetMinRange" class="minrange" type="range" min="1000" max="100000" step="1000" value="12000" onclick="button_color(this)"/>
+              <label for="budgetMaxRange">Budget Max</label>
+              <input id="budgetMaxRange" class="maxrange" type="range" min="1000" max="100000" step="1000" value="80000" />
+              <div class="pseudo-track"></div>
+            </div>
+
+            <div class="labelMax">
+                <label><span class="label-text hidden">Budget Max</span>
+                  <span class="input-prepend">$</span><input id="budgetMax" name="butgetMax" class="maxvalue" type="number" step="1000" min="1000" max="100000" value="100000" onfocus="bgcolor_change(this)" onblur="bgcolor_back(this)"/>
+                </label>
+            </div>
+        </div>
+      
+    </fieldset>
+    <script>
+        function bgcolor_change(obj) {
+            obj.style.backgroundColor = '#137CBD';
+        }
+        function bgcolor_back(obj) {
+            obj.style.backgroundColor = '#ffffff'
+        }
+        function button_color(obj) {
+            thumb.style.backgroundColor = '#137CBD';
+        }
+    </script>
+</body>
+
+</div>
+</html>

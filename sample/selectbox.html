@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectbox</title>
+
+    <!-- css -->
+    <link href="/common/css/app.css" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <script src="/common/plugins/fontawesome-free-6.1.2-web/js/all.js"></script>
+</head>
+
+<body>
+    <section>
+        <div class="selectbox">
+            <input autocomplete="off" role="combobox" list="" id="input" name="test" placeholder="">
+            <div class="arrow"><i class="fa-solid fa-chevron-up"></i></div>
+            <datalist id="test" role="listbox">
+                <option value="여기에">여기에</option>
+                <option value="셀렉트">셀렉트</option>
+                <option value="옵션이">옵션이</option>
+                <option value="들어갑니다">들어갑니다</option>
+                <option value="리스트01">리스트01</option>
+                <option value="리스트02">리스트02</option>
+                <option value="리스트03">리스트03</option>
+                <option value="리스트04">리스트04</option>
+                <option value="리스트05">리스트05</option>
+                <option value="리스트06">리스트06</option>
+                <option value="리스트07">리스트07</option>
+                <option value="리스트08">리스트08</option>
+                <option value="리스트09">리스트09</option>
+                <option value="리스트10">리스트10</option>
+            </datalist>
+        </div>
+
+    </section>
+
+    <script>
+        //기능 임의 추가 수정 필요
+        input.onfocus = function () {
+            test.style.display = 'block';
+            input.style.borderRadius = "2px 2px 0 0";
+        };
+
+        for (let option of test.options) {
+            option.onclick = function () {
+                input.value = option.value;
+                test.style.display = 'none';
+                input.style.borderRadius = "5px";
+            }
+        };
+
+        input.oninput = function () {
+            currentFocus = -1;
+            var text = input.value.toUpperCase();
+
+            for (let option of test.options) {
+                if (option.value.toUpperCase().indexOf(text) > -1) {
+                    option.style.display = "block";
+                } else {
+                    option.style.display = "none";
+                }
+            };
+        }
+        var currentFocus = -1;
+        input.onkeydown = function (e) {
+            if (e.keyCode == 40) {
+                currentFocus++
+                addActive(test.options);
+            } else if (e.keyCode == 38) {
+                currentFocus--
+                addActive(test.options);
+            } else if (e.keyCode == 13) {
+                e.preventDefault();
+                if (currentFocus > -1) {
+
+                    if (test.options) test.options[currentFocus].click();
+                }
+
+            }
+        }
+
+        function addActive(x) {
+            if (!x) return false;
+            removeActive(x);
+            if (currentFocus >= x.length) currentFocus = 0;
+            if (currentFocus < 0) currentFocus = (x.length - 1);
+            x[currentFocus].classList.add("active");
+        }
+
+        function removeActive(x) {
+            for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("active");
+            }
+        }
+    </script>
+</body>
+
+</html>

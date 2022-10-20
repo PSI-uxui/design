@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input samples</title>
+
+    <!-- js -->
+    <script src="/common/plugins/jquery/jquery-3.6.0.js"></script>
+    <script src="/common/plugins/jquery-ui-1.13.2/jquery-ui.js"></script>
+
+    <!-- fontawesome -->
+    <script src="/common/plugins/fontawesome-free-6.1.2-web/js/all.js"></script>
+
+    <!-- jQuery Date Range Picker -->
+    <link rel="stylesheet" href="/common/plugins/daterangepicker/daterangepicker.css" />
+    <script type="text/javascript" src="/common/plugins/daterangepicker/moment.js"></script>
+    <script type="text/javascript" src="/common/plugins/daterangepicker/jquery.daterangepicker.min.js"></script>
+
+    <!-- select2 -->
+    <link rel="stylesheet" href="/common/plugins/select2/select2.min.css" />
+    <script src="/common/plugins/select2/select2.min.js"></script>
+
+    <!-- sweetalert -->
+    <script src="/common/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- common -->
+    <link rel="stylesheet" href="/common/css/app.css" type="text/css" />
+    <script src="/common/js/common.js"></script>
+</head>
+
+<body>
+    <nav></nav>
+
+    <div class="appWrap">
+        <header></header>
+
+        <div class="topInfo">
+            <div class="siteRoad">
+                <i class="fa-solid fa-bookmark"></i>
+                <span class="road">샘플</span>
+                <i class="fa-solid fa-caret-right"></i>
+                <span>input</span>
+            </div>
+            <div class="mapToggle">
+                <div class="autoRefresh">
+                    <button>
+                        자동갱신
+                        <div class="refresh">
+                            <i class="fa-solid fa-rotate-right"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="bookMark">
+                    <button>
+                        즐겨찾기
+                        <div class="star"><i class="fa-solid fa-star"></i></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- section태그의 class는 각 화면 ID값 ex) wwm11f0001 -->
+        <section class="rayout">
+            <div class="secWrap">
+                <h2>input</h2>
+
+                <!-- 검색 조건 -->
+                <div class="searchBox">
+                    <div class="searchArea">
+                        <div class="searchAreaWrap">
+                            <ul class="divd3">
+                                <li>
+                                    <label for="">default</label>
+                                    <div class="inputBox">
+                                        <input type="text" placeholder="택스트를 입력하세요" />
+                                    </div>
+                                    <div class="selectBox">
+                                        <select class="select">
+                                            <option value="op1">option1</option>
+                                            <option value="op2">option2</option>
+                                            <option value="op3">option3</option>
+                                            <option value="op4">option4</option>
+                                            <option value="op5">option5</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">read-only</label>
+                                    <div class="inputBox">
+                                        <input type="text" value="읽기전용" readonly />
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="text" value="읽기전용" readonly />
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">search</label>
+                                    <div class="inputBox search">
+                                        <input type="text" placeholder="검색어를 입력하세요" value="" />
+                                        <div class="mag" onclick="modal('modal1')">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </div>
+                                        <div class="reset">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </div>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="text" value="읽기전용" readonly />
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="divd3">
+                                <li>
+                                    <label for="">datepicker</label>
+                                    <div class="inputBox date">
+                                        <input class="dateSingle" readonly type="text" placeholder="날짜를 선택하세요">
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">range datepicker</label>
+                                    <div class="inputBox date">
+                                        <input class="dateRange" type="text" placeholder="기간을 선택하세요">
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="text" value="읽기전용" readonly />
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">select</label>
+                                    <div class="selectBox">
+                                        <select class="select">
+                                            <option value="op1">option1</option>
+                                            <option value="op2">option2</option>
+                                            <option value="op3">option3</option>
+                                            <option value="op4">option4</option>
+                                            <option value="op5">option5</option>
+                                        </select>
+                                    </div>
+                                    <div class="selectBox">
+                                        <select class="select">
+                                            <option value="op1">option1</option>
+                                            <option value="op2">option2</option>
+                                            <option value="op3">option3</option>
+                                            <option value="op4">option4</option>
+                                            <option value="op5">option5</option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                            </ul>
+                            <ul class="divd3">
+                                <li>
+                                    <label for="">multi select</label>
+                                    <div class="selectBox">
+                                        <select class="select" multiple="multiple">
+                                            <option value="AL">Alabama</option>
+                                            <option value="WY">Wyoming</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">checkbox</label>
+                                    <div class="inputBox fit">
+                                        <input type="checkbox">
+                                        <label>항목1</label>
+                                    </div>
+                                    <div class="inputBox fit">
+                                        <input type="checkbox" checked>
+                                        <label>항목2</label>
+                                    </div>
+                                    <div class="inputBox fit">
+                                        <!--체크박스 그룹 핸들링시 부분적으로 체크 된 상태를 나타낼 경우 사용-->
+                                        <input type="checkbox" checked class="particle" disabled>
+                                        <label>항목3</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="">radio</label>
+                                    <div class="inputBox fit">
+                                        <input type="radio" name="test2" checked>
+                                        <label>옵션1</label>
+                                    </div>
+                                    <div class="inputBox fit">
+                                        <input type="radio" name="test2">
+                                        <label>옵션2</label>
+                                    </div>
+                                    <div class="inputBox fit">
+                                        <input type="radio" name="test2">
+                                        <label>옵션3</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="state2 search">조회</button>
+                        <button class="searchReset">초기화</button>
+                    </div>
+                    <!-- 접기 토글 -->
+                    <div class="flipToggle"></div>
+                </div>
+
+                <div class="rsltBox">
+                    <h3>입력, 검색, 날짜, 선택</h3>
+
+                    <div class="divdWrap">
+                        <ul class="divd4">
+                            <li>
+                                <label for="">default</label>
+                                <div class="inputBox">
+                                    <input type="text" placeholder="택스트를 입력하세요" />
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">read-only</label>
+                                <div class="inputBox">
+                                    <input type="text" value="읽기전용" readonly />
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">search</label>
+                                <div class="inputBox search">
+                                    <input type="text" placeholder="검색어를 입력하세요" value="" />
+                                    <div class="mag" onclick="modal('modal2')">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                    <div class="reset">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">datepicker</label>
+                                <div class="inputBox date">
+                                    <input class="dateSingle" type="text" placeholder="날짜를 선택하세요" />
+                                </div>
+                            </li>
+                        </ul>
+
+                        <ul class="divd4">
+                            <li>
+                                <label for="">range datepicker</label>
+                                <div class="inputBox date">
+                                    <input class="dateRange" type="text" placeholder="기간을 선택하세요">
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">select</label>
+                                <div class="selectBox">
+                                    <select class="select" name="state">
+                                        <option value="op1">option1</option>
+                                        <option value="op2">option2</option>
+                                        <option value="op3">option3</option>
+                                        <option value="op4">option4</option>
+                                        <option value="op5">option5</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">multi select</label>
+                                <div class="selectBox">
+                                    <select class="select" multiple="multiple" minimumResultsForSearch="infinity">
+                                        <option value="op1">op1</option>
+                                        <option value="op2">op2</option>
+                                        <option value="op3">op3</option>
+                                        <option value="op4">op4</option>
+                                        <option value="op5">op5</option>
+                                        <option value="op6">op6</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">checkbox</label>
+                                <div class="inputBox fit">
+                                    <input type="checkbox">
+                                    <label>항목1</label>
+                                </div>
+                                <div class="inputBox fit">
+                                    <input type="checkbox" checked>
+                                    <label>항목2</label>
+                                </div>
+                                <div class="inputBox fit">
+                                    <!--체크박스 그룹 핸들링시 부분적으로 체크 된 상태를 나타낼 경우 사용-->
+                                    <input type="checkbox" checked class="particle" disabled>
+                                    <label>항목3</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <label for="">radio</label>
+                                <div class="inputBox fit">
+                                    <input type="radio" name="test1" checked>
+                                    <label>옵션1</label>
+                                </div>
+                                <div class="inputBox fit">
+                                    <input type="radio" name="test1">
+                                    <label>옵션2</label>
+                                </div>
+                                <div class="inputBox fit">
+                                    <input type="radio" name="test1">
+                                    <label>옵션3</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <div class="modalWrap">
+            <!-- "max", "mid", "min" class 부여 3단계 사이즈 -->
+
+            <div class="modal min modal1">
+                <div class="closeBtn" onclick="modal('modal1')">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+                <h3>검색창1</h3>
+                <div class="modalInWrap">
+                    <select class="select" name="state">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal mid modal2">
+                <div class="closeBtn" onclick="modal('modal2')">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+                <h3>검색창2</h3>
+                <div class="modalInWrap">검색조건이 이것저것 들어가겠죠?</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            //datepicker
+            //예시사이트: https://www.daterangepicker.com/#examples
+            $('.dateSingle:not([readonly])').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                autoApply: true,
+                // timePicker: true,
+                // locale: {
+                //     format: 'M/DD hh:mm A'
+                // }
+            });
+            $('.dateRange:not([readonly])').daterangepicker({
+                showDropdowns: true,
+            });
+
+            //select
+            $(".select").select2({
+                placeholder: "원하는 값을 선택하세요",
+                width: "100%",
+                // closeOnSelect: false,
+                // minimumResultsForSearch: Infinity,
+            });
+        })
+    </script>
+</body>
+
+</html>
